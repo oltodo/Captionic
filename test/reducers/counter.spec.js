@@ -1,8 +1,8 @@
-import counter from '../../app/reducers/counter';
+import counter from '../../app/redux/reducers/counter';
 import {
   INCREMENT_COUNTER,
   DECREMENT_COUNTER
-} from '../../app/actions/counter';
+} from '../../app/redux/actions/counter';
 
 describe('reducers', () => {
   describe('counter', () => {

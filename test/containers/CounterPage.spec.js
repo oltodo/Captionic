@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { ConnectedRouter } from 'connected-react-router';
 import CounterPage from '../../app/containers/CounterPage';
-import { configureStore } from '../../app/store/configureStore';
+import { configureStore } from '../../app/redux/store/configureStore';
 
 Enzyme.configure({ adapter: new Adapter() });
 

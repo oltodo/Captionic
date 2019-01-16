@@ -1,13 +1,37 @@
 // @flow
 import React, { Component } from 'react';
-import Home from '../components/Home';
+import styled from 'styled-components';
+import Player from 'components/Player';
+
+// const {
+//   remote: { dialog }
+// } = require('electron');
 
 type Props = {};
 
+const Wrapper = styled.div`
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export default class HomePage extends Component<Props> {
-  props: Props;
+  state = {
+    src: '/Users/nbazille/Downloads/video/video.mkv'
+  };
+
+  // componentDidMount() {
+  //   const [src] = dialog.showOpenDialog({ properties: ['openFile'] });
+  //
+  //   this.setState({ src });
+  // }
 
   render() {
-    return <Home />;
+    const { src } = this.state;
+
+    return <Wrapper>{src && <Player src={src} />}</Wrapper>;
   }
 }

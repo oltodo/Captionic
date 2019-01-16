@@ -179,7 +179,27 @@ export default merge.smart(baseConfig, {
       },
       // SVG Font
       {
+        test: /\.svg$/,
+        include: path.resolve(
+          __dirname,
+          '../node_modules/material-design-icons'
+        ),
+        use: {
+          loader: '@svgr/webpack',
+          options: {
+            icon: true,
+            svgProps: {
+              fill: 'white'
+            }
+          }
+        }
+      },
+      {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        exclude: path.resolve(
+          __dirname,
+          '../node_modules/material-design-icons'
+        ),
         use: {
           loader: 'url-loader',
           options: {
